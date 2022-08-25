@@ -1,3 +1,4 @@
+
  <!Doctype html>
 <html lang="en">
  
@@ -27,16 +28,17 @@
 <body>
  
   <div class="container">
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="<?php $controller = new ImportDataController; $controller->index("submit")?>" method="post" enctype="multipart/form-data">
       <div class="input-group">
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="customFileInput" aria-describedby="customFileInput" name="file">
-          <label class="custom-file-label" for="customFileInput">Import</label>
+          <label class="custom-file-label" for="customFileInput">Import</label>       
         </div>
       </div>
-    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
- 
-  </div>
+ <br/>
+    <div class="top-name center-block text-center"> 
+    <input type="submit" name="submit" value="Upload" class="btn btn-primary">
+</div>
   <br/>
 
 <br/>  
@@ -47,10 +49,11 @@
 <br/>
 
 <br/>  
-        <div class="top-name center-block text-center">
-          <a href="/TestProject/View/result.php">Views result</a>  
-        </div>
+        
   </form>
+<div class="top-name center-block text-center">
+          <a href="/TestProject/View/result.php">View result</a>  
+        </div>
   </div>
  
 </body>
