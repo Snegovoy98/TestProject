@@ -45,10 +45,4 @@ class ImportDataController extends Controller
     
       $this->view('index');
    }
-
-   public function result() {
-      $loaderData = $this->model('LoaderData');
-      $data = $loaderData->getDataFromDB();   
-     return $data;
-   } 
 }
