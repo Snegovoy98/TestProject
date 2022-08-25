@@ -5,7 +5,6 @@ class ImportDataController extends Controller
     public function index($file='')
    {
       $loaderData = $this->model('LoaderData');
-       
     if (isset($_POST['submit']))
     {
  
@@ -14,6 +13,7 @@ class ImportDataController extends Controller
         'application/csv'
     ];
     }  
+
     if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $fileMimes))
     {
             $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
@@ -36,9 +36,12 @@ class ImportDataController extends Controller
                 }
             }
             
-
             fclose($csvFile);    
     }
+    if (isset($_POST['clear']))
+    {
+        $loaderData->removetDataFromDB();
+    }  
     
       $this->view('index');
    }

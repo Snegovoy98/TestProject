@@ -15,7 +15,8 @@ class LoaderData extends DBConnect
     }
 
     public function getDataFromDB() {
-    
+        $sql = "SELECT UID FROM Users";
+        return mysqli_query($this->connection, $sql);
     }
 
     public function updateDataInDB(int $UID, string $name, int $age, string $email, string $phone, string $gender) {
@@ -26,11 +27,15 @@ class LoaderData extends DBConnect
     public function checkIsUserExists(int $UID): bool {
         $sql = "SELECT UID FROM Users WHERE UID = '".$UID."'";         
         $result = mysqli_query($this->connection, $sql);
-        var_dump($result);
         if($result->num_rows > 0) {
             return true;        
         } else {
             return false;        
         }
+    }
+    
+    public function removetDataFromDB() {
+        $sql = "DELETE FROM Users";
+        return mysqli_query($this->connection, $sql);
     }
 }

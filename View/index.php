@@ -44,7 +44,7 @@
 <br/>  
    </div>
     <div class="top-name center-block text-center"> 
-          <input type="button" class="center-block"  name="clear" value="Clear All">
+          <input type="submit" class="center-block"  name="clear" value="Clear All">
     </div>
 <br/>
 
@@ -53,7 +53,7 @@
   </form>
 <div class="top-name center-block text-center">
           <a href="/TestProject/View/result.php">View result</a>  
-        </div>
+ </div>
   </div>
  
 </body>

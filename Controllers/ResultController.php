@@ -5,6 +5,7 @@ class ResultController extends Controller
     public function index($name='')
     {
       $loaderData = $this->model('LoaderData');
-      $this->view('result');
+      $data = $loaderData->getDataFromDB();   
+     return $this->view('result', ["name"=>$data]);
     }
 }
