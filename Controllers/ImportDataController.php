@@ -4,14 +4,14 @@ class ImportDataController extends Controller
 {
     public function index($file='')
    {
-      $loaderData = $this->model('LoaderData');
+    $loaderData = $this->model('LoaderData');
+    
     if (isset($_POST['submit']))
     {
- 
-    $fileMimes = [
-        'text/csv',
-        'application/csv'
-    ];
+        $fileMimes = [
+            'text/csv',
+            'application/csv'
+        ];
     }  
 
     if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $fileMimes))
@@ -45,4 +45,10 @@ class ImportDataController extends Controller
     
       $this->view('index');
    }
+
+   public function result() {
+      $loaderData = $this->model('LoaderData');
+      $data = $loaderData->getDataFromDB();   
+     return $data;
+   } 
 }

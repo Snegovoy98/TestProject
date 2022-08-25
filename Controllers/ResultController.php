@@ -6,6 +6,6 @@ class ResultController extends Controller
     {
       $loaderData = $this->model('LoaderData');
       $data = $loaderData->getDataFromDB();   
-     return $this->view('result', ["name"=>$data]);
+      $this->view('result', ["name"=>$data]);
     }
 }

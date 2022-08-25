@@ -19,7 +19,10 @@
     </div>
   </div>
 
-<table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="70%">
+    <?php 
+        $result = 0;
+        if ($result > 0) { 
+      echo ' <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="70%">
   <thead>
     <tr>
       <th class="th-sm">ID
@@ -36,20 +39,25 @@
       </th>
     </tr>
   </thead>
-  <tbody>
-    <?php 
-        $echo $data["name"];
-        if ($result->num_rows > 0) { 
-                while($row = $result->fetch_assoc()) { 
+  <tbody>';
+               // while($row = $result->fetch_assoc()) { 
 
-      echo "<tr><td>" . $row["UID"]
-        . "</td><td>" . $row["Name"] 
-        . "</td><td>" . $row["Age"]
-        . "</td><td>" . $row["Email"]
-        . "</td><td>" . $row["Phone"]
-        . "</td><td>" . $row["Gender"]
-        . "</td></tr>"; 
-    } 
+//     echo "<tr><td>" . $row["UID"]
+//        . "</td><td>" . $row["Name"] 
+//        . "</td><td>" . $row["Age"]
+//       . "</td><td>" . $row["Email"]
+//       . "</td><td>" . $row["Phone"]
+//        . "</td><td>" . $row["Gender"]
+//        . "</td></tr>"; 
+         } else {
+             echo '<div class="container">
+                    <br/>
+                    <br/>
+                  <div class="top-name center-block text-center">
+                     <label class="top-name center-block text-center">There is no data in database!</label> 
+                </div>      
+                </div>';
+          } 
     ?>
  
 </body>

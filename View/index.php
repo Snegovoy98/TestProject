@@ -47,9 +47,7 @@
           <input type="submit" class="center-block"  name="clear" value="Clear All">
     </div>
 <br/>
-
-<br/>  
-        
+<br/>         
   </form>
 <div class="top-name center-block text-center">
           <a href="/TestProject/View/result.php">View result</a>  
